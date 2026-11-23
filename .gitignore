@@ -1,0 +1,79 @@
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+develop-eggs/
+eggs/
+*.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ---------------------------------------------------------------------------
+# Virtual environments
+# ---------------------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+
+# ---------------------------------------------------------------------------
+# Testing / tooling caches
+# ---------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+
+# ---------------------------------------------------------------------------
+# Jupyter notebooks checkpoints
+# ---------------------------------------------------------------------------
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Environment / secrets
+# ---------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---------------------------------------------------------------------------
+# Application data & generated artifacts
+# ---------------------------------------------------------------------------
+# Generated feature sets, batch outputs, uploaded CSV results
+data/processed/
+data/outputs/
+*.log
+logs/
+/tmp/
+
+# NOTE: models/trained/*.joblib and *.json are intentionally committed — the API
+# loads them at startup so the app runs without retraining first. Only ignore
+# temporary/backup model files.
+models/trained/*.bak
+models/trained/*.tmp
+
+# ---------------------------------------------------------------------------
+# OS / editor files
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
