@@ -1,0 +1,13 @@
+{
+  "base_model": "logistic_regression",
+  "calibrated_path": "models/trained\\logistic_regression_calibrated.joblib",
+  "calibration_method": "isotonic",
+  "test_roc_auc_raw": 0.6269476858416908,
+  "test_roc_auc_calibrated": 0.6232765543045565,
+  "test_brier_raw": 0.2380637844300328,
+  "test_brier_calibrated": 0.22464218852727538,
+  "thresholds": {
+    "hot": 0.7,
+    "warm": 0.35
+  }
+}
