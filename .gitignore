@@ -67,6 +67,10 @@ logs/
 models/trained/*.bak
 models/trained/*.tmp
 
+# Guard against a stray nested artifact dir created by running a script from src/
+# (train/calibrate scripts now anchor MODEL_DIR to the project root)
+src/models/models/
+
 # ---------------------------------------------------------------------------
 # OS / editor files
 # ---------------------------------------------------------------------------

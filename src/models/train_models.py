@@ -46,9 +46,10 @@ from src.data.feature_engineering import (
 
 warnings.filterwarnings("ignore")
 
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 RANDOM_SEED = 42
-DATA_PATH = "data/raw/leads_dataset.csv"
-MODEL_DIR = "models/trained"
+DATA_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "leads_dataset.csv")
+MODEL_DIR = os.path.join(PROJECT_ROOT, "models", "trained")
 TEST_SIZE = 0.2
 VAL_SIZE = 0.25  # fraction of train used for validation (model selection)
 

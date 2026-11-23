@@ -21,7 +21,9 @@ from src.data.feature_engineering import (
     get_feature_names,
 )
 
-MODEL_DIR = "models/trained"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+MODEL_DIR = os.path.join(PROJECT_ROOT, "models", "trained")
+DATA_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "leads_dataset.csv")
 
 
 
@@ -47,7 +49,7 @@ class LeadExplainer:
         self.classifier = self.model.named_steps["model"]
 
         # Build a background dataset for SHAP
-        df = pd.read_csv("data/raw/leads_dataset.csv")
+        df = pd.read_csv(DATA_PATH)
         X = df.drop(columns=["Converted"])
         X_eng = self.engineer.transform(X)
         self.preprocessor.fit(X_eng)

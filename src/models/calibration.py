@@ -14,7 +14,9 @@ from sklearn.isotonic import IsotonicRegression
 from sklearn.metrics import brier_score_loss, roc_auc_score
 from sklearn.model_selection import train_test_split
 
-MODEL_DIR = "models/trained"
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+MODEL_DIR = os.path.join(PROJECT_ROOT, "models", "trained")
+DATA_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "leads_dataset.csv")
 
 
 class _CalibratedPipeline:
@@ -64,7 +66,7 @@ def calibrate_and_score(best_model_name: str = "logistic_regression") -> dict:
     pipeline_path = os.path.join(MODEL_DIR, f"{best_model_name}.joblib")
     base_pipeline = joblib.load(pipeline_path)
 
-    df = pd.read_csv("data/raw/leads_dataset.csv")
+    df = pd.read_csv(DATA_PATH)
     X = df.drop(columns=["Converted"])
     y = df["Converted"]
 
