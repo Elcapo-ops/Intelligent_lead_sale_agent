@@ -421,7 +421,7 @@ repository root** — the training and calibration scripts resolve `data/` and
 ### 1. Clone and create an environment
 
 ```bash
-git clone https://github.com/<your-username>/Smart-Lead-Scoring-Engine_AlchemistDigitalSolution.git
+git clone https://github.com/Elcapo-ops/Smart-Lead-Scoring-Engine_AlchemistDigitalSolution.git
 cd Smart-Lead-Scoring-Engine_AlchemistDigitalSolution
 
 python -m venv .venv
@@ -434,7 +434,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 pip install -e .          # makes `src.*` importable from anywhere
 ```
-
+### If you want to generate the datasets and models by yourself :: 
 ### 2. Get the data and models
 
 Pre-generated dataset and trained artifacts are committed, so this step is optional —
@@ -491,21 +491,6 @@ The UI reads the API location from the `API_BASE` environment variable
 (`API_BASE = os.getenv("API_BASE", "http://localhost:8000")` at the top of
 `frontend/app.py`), so point it at the deployed API when the two services run on
 different hosts.
-
-### Suggested managed hosting (for the submission link)
-
-- **API → Render / Railway / Fly.io**: start command
-  `uvicorn src.api.main:app --host 0.0.0.0 --port $PORT`, environment variable none
-  required (the API bundles the dataset and trained artifacts).
-- **UI → Streamlit Community Cloud / Hugging Face Spaces**: set the
-  `API_BASE` secret to the deployed API URL. Streamlit Cloud runs the UI only; it
-  cannot host the FastAPI service, so both services must be deployed.
-
-> **Status:** no public deployment link exists yet for this repository. The commands
-> above are the ones that were verified locally; add the live URLs to this section
-> once the services are pushed.
-
----
 
 ## 14. Testing
 
