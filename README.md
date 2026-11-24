@@ -434,7 +434,7 @@ source .venv/bin/activate
 pip install -r requirements.txt
 pip install -e .          # makes `src.*` importable from anywhere
 ```
-### If you want to generate the datasets and models by yourself :: 
+### If you want to generate the datasets and models by yourself if not SKIP THIS STEP:: 
 ### 2. Get the data and models
 
 Pre-generated dataset and trained artifacts are committed, so this step is optional —
